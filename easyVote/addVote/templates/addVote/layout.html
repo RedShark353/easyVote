@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{% static 'addVote/styles.css' %}" rel="stylesheet" />
+    <title>easyVote</title>
+  </head>
+
+  <body>
+    {% block body %}{% endblock %}
+  </body>
+
+  <script>
+    //Pick up to 5 checkboxes
+    var allOptions = document.getElementsByClassName('candOption')
+
+
+    function checkMax(event) {
+      var allChecked = document.querySelectorAll('input[type="checkbox"]:checked');
+      if (allChecked.length > 3) {
+        alert("Select up to 5 candidates")
+        event.target.checked=false;
+      }
+    }
+  </script>
+</html>

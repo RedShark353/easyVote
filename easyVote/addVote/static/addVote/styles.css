@@ -1,0 +1,31 @@
+.container {
+  width: 60%;
+  margin: auto;
+  margin-top: 10%;
+  border: 2px solid rgb(166, 235, 6);
+  border-radius: 5px;
+}
+
+.container h2 {
+  font-family: "Lucida Handwriting";
+  text-align: center;
+  margin: 1em;
+}
+
+.container h5 {
+  text-align: center;
+}
+
+.container form {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  font-size: 21px;
+}
+
+#submitBtn {
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

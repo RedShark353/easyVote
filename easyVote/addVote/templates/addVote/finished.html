@@ -1,0 +1,12 @@
+{% extends "addVote/layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <h2>easyVote</h2>
+
+    {%for cand in candidates%}
+        <h5>{{cand}}</h5>
+    {%endfor%}
+</div>
+{% endblock %}

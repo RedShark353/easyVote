@@ -1,0 +1,20 @@
+{% extends "addVote/layout.html" %}
+
+{% block body %}
+
+<div class="container">
+  <h2>easyVote</h2>
+
+  <form action="{% url 'addVote:addNew' %}" method="post">
+    
+      {% csrf_token %}
+    
+      {%for cand in candidates%}
+      <input type="checkbox" id="{{cand}}" name="candidate" class="candOption" value="{{cand.id}}" onchange="checkMax(event)">
+      <label for="{{cand}}">{{cand.name}}</label><br>
+      {%endfor%}
+      <input type="submit" id="submitBtn" class="btn btn-primary"/>
+  </form>
+</div>
+
+{% endblock %}

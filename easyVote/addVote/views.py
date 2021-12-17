@@ -1,10 +1,13 @@
 from django.shortcuts import render
+import random
+import string
 
 #Databases
 from .models import Candidate, Code
 
 # Create your views here.
 def index(request):
+    createCodes()
     return render(request, "addVote/newVote.html", {
         "candidates":Candidate.objects.all()
     })
@@ -35,3 +38,15 @@ def add(request):
            }) 
     else:
         return render(request, "addVote/newVote.html")
+
+def createCodes():
+    created = set()
+    i = 0
+    while i < 210:
+        letters = string.ascii_uppercase
+        genCode = ''.join(random.choice(letters) for i in range(6))
+        if genCode not in created:
+            created.add(genCode)
+            newCode = Code(code=genCode, used=False)
+            newCode.save()
+            i += 1

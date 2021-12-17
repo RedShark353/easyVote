@@ -11,3 +11,10 @@ class Candidate(models.Model):
 
     def __str__(self):
         return f"{self.name}: {self.votes} votes"
+
+class Code(models.Model):
+    code = models.CharField(max_length=6)
+    used = models.BooleanField()
+
+    def __str__(self):
+        return f"{self.code}: {self.used} "

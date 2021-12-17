@@ -13,8 +13,14 @@
       <input type="checkbox" id="{{cand}}" name="candidate" class="candOption" value="{{cand.id}}" onchange="checkMax(event)">
       <label for="{{cand}}">{{cand.name}}</label><br>
       {%endfor%}
+      <label for="code">Κωδικός:</label>
+      <input type="text" name="code" id="uniqueCode" maxlength="6">
       <input type="submit" id="submitBtn" class="btn btn-primary"/>
   </form>
+
+  {%if message%}
+    <h5 class="text-danger">{{message}}</h4>
+  {%endif%}
 </div>
 
 {% endblock %}

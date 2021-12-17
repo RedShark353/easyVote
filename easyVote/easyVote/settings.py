@@ -25,7 +25,7 @@ SECRET_KEY = '3!#3^2_c^sztb4mki7$q=8dn0bk!z(@y+6)bxpfxd%ev$0px3s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["easyvote.eu.pythonanywhere.com"]
+ALLOWED_HOSTS = ["easyvote.eu.pythonanywhere.com", '127.0.0.1']
 
 
 # Application definition

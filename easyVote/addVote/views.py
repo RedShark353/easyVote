@@ -7,7 +7,11 @@ from .models import Candidate, Code
 
 # Create your views here.
 def index(request):
-    createCodes()
+    allCodes = Code.objects.all()
+    codeNames = []
+    for i in allCodes:
+        codeNames.append(i.code)
+    print(codeNames)
     return render(request, "addVote/newVote.html", {
         "candidates":Candidate.objects.all()
     })

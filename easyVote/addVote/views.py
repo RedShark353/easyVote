@@ -38,6 +38,11 @@ def add(request):
     else:
         return render(request, "addVote/newVote.html")
 
+def results(request):
+    return render(request, "addVote/finished.html", {
+        "candidates": Candidate.objects.all(),
+    })
+
 def createCodes():
     created = set()
     i = 0
